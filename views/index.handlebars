@@ -1,8 +1,12 @@
-<div class = "newsStory">
-	<ul>
-		{{#each stories }}
-		  <li>{{title}}</li>
-		  <li>{{link}}</li>
-		{{/each}}
-	</ul>
-</div>
+{{#each stories}}
+	<div class = "newsStory">
+		<h3>{{title}}</h3>
+		<a href="{{link}}" class="btn btn-primary">Read the Story</a>
+		<form action="/articles/{{this.id}}" method="get">
+		  <input type="submit" class="btn btn-info" value="Tell Us Your Thoughts">
+		</form>
+	</div>
+<br>
+{{/each}}
+	
+
