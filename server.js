@@ -4,6 +4,7 @@ var cheerio = require("cheerio");
 var express = require("express");
 var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
 
 //Express
 var app = express();
@@ -54,4 +55,8 @@ request("https://www.reddit.com/r/nottheonion", function(error, response, html) 
 // #### Routes ####
 app.get("/", function(request, response){
   response.render("index", {stories: stories});
+});
+
+app.get("/articles/:id", function(request, response){
+  response.send("Page here");
 });
